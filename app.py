@@ -5,7 +5,7 @@ import pickle
 from flask_cors import cross_origin
 import os
 import sklearn
-from sklearn import ensemble.forest
+
 
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
