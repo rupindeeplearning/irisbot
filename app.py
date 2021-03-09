@@ -3,6 +3,7 @@ from flask import Flask, request, make_response
 import json
 import pickle
 from flask_cors import cross_origin
+import os
 
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
