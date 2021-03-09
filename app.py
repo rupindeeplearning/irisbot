@@ -4,6 +4,8 @@ import json
 import pickle
 from flask_cors import cross_origin
 import os
+import sklearn
+
 
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
