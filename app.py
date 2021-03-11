@@ -6,6 +6,15 @@ from flask_cors import cross_origin
 import os
 import sklearn
 
+import smtplib
+import time
+import urllib.parse
+import urllib.request
+from urllib.request import urlopen
+import requests
+
+
+
 
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
