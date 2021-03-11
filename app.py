@@ -6,12 +6,10 @@ from flask_cors import cross_origin
 import os
 import sklearn
 
-import smtplib
-import time
 import urllib.parse
 import urllib.request
 from urllib.request import urlopen
-import requests
+
 
 
 
