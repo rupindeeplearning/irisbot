@@ -110,7 +110,7 @@ def processRequest(req):
                         
         prediction = body["incident"]
     
-        output = round(prediction[0], 2)
+        output = prediction
     
     	
         if(output==0):
