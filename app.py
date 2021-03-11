@@ -114,13 +114,13 @@ def processRequest(req):
     
     	
         if(output==0):
-            flowr = 'Accident'
+            flowr = 'Major Incident'
     
         if(output==1):
-            flowr = 'Minor Incident'
+            flowr = 'Incident'
         
         if(output==2):
-            flowr = 'Major Incident'
+            flowr = 'All Clear'
        
         fulfillmentText= "The incident type seems to be..  {} !".format(flowr)
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
