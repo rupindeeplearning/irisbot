@@ -53,7 +53,7 @@ def processRequest(req):
     condition=parameters.get("condition")
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atFault")
-    int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
+    int_features = [location,fault,condition,issueNotAddressed,atFault]
     
     final_features = [np.array(int_features)]
 	 
