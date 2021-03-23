@@ -48,10 +48,11 @@ def processRequest(req):
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
-    Petal_length=parameters.get("number")
-    Petal_width = parameters.get("number1")
-    Sepal_length=parameters.get("number2")
-    Sepal_width=parameters.get("number3")
+    location=parameters.get("location")
+    fault = parameters.get("fault")
+    condition=parameters.get("condition")
+    issueNotAddressed=parameters.get("issueNotAddressed")
+    atFault=parameters.get("atFault")
     int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
     final_features = [np.array(int_features)]
