@@ -68,7 +68,7 @@ def processRequest(req):
     
     
     
-    if (intent=='IrisData'):
+    if (intent=='Fault intent'):
     
         url = 'https://jaqjv6q0bb.execute-api.us-east-2.amazonaws.com/invoke_endpoint/invoke'  # localhost and the defined port + endpoint
         body = {
