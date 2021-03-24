@@ -31,7 +31,7 @@ def webhook():
     #print("Request:")
     #print(json.dumps(req, indent=4))
 
-    res = processRequest(req)
+    res = processRequest(req,request)
 
     res = json.dumps(res, indent=4)
     #print(res)
@@ -41,7 +41,7 @@ def webhook():
 
 
 # processing the request from dialogflow
-def processRequest(req):
+def processRequest(req,request):
 
     #sessionID=req.get('responseId')
     result = req.get("queryResult")
@@ -54,7 +54,10 @@ def processRequest(req):
     condition=parameters.get("condition")
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atFault")
-    int_features = [location,fault,condition,issueNotAddressed,atFault]
+    issueNumber=parameters.get("issueNumber")
+    if issueNumber is None:
+        issueNumber = np.random.randint(10002,99999)
+    int_features = [location,fault,condition,issueNotAddressed,atFault,issueNumber]
     
     final_features = [np.array(int_features)]
 	 
@@ -77,8 +80,19 @@ def processRequest(req):
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
-            "fulfillmentText": fulfillmentText
+            "fulfillmentText": fulfillmentText,
+            "outputContexts": [
+                    {
+                        "name": request.body.session + "/contexts/usercontext",
+                        "lifespanCount": 5,
+                        "parameters": {
+                            "token": result.access_token
+                        }
+                    }
+                ]
         }
+        
+               
     #else:
     #    log.write_log(sessionID, "Bot Says: " + result.fulfillmentText)
 
