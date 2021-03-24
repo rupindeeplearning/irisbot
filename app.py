@@ -83,10 +83,15 @@ def processRequest(req,request):
             "fulfillmentText": fulfillmentText,
             "outputContexts": [
                     {
-                        "name": request.body.session + "/contexts/usercontext",
+                        "name": "Fault intent",
                         "lifespanCount": 5,
                         "parameters": {
-                            "token": result.access_token
+                            "location": location,
+                            "fault":fault,
+                            "condition":condition,
+                            "issueNotAddressed":issueNotAddressed,
+                            "atFault":atFault,
+                            "issueNumber":issueNumber
                         }
                     }
                 ]
