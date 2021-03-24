@@ -31,7 +31,7 @@ def webhook():
     #print("Request:")
     #print(json.dumps(req, indent=4))
 
-    res = processRequest(req,request)
+    res = processRequest(req)
 
     res = json.dumps(res, indent=4)
     #print(res)
@@ -41,7 +41,7 @@ def webhook():
 
 
 # processing the request from dialogflow
-def processRequest(req,request):
+def processRequest(req):
 
     #sessionID=req.get('responseId')
     result = req.get("queryResult")
