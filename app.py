@@ -45,6 +45,7 @@ def processRequest(req):
 
     #sessionID=req.get('responseId')
     result = req.get("queryResult")
+        
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
@@ -71,59 +72,9 @@ def processRequest(req):
     
     if (intent=='Fault intent'):
     
-        url = 'https://jaqjv6q0bb.execute-api.us-east-2.amazonaws.com/invoke_endpoint/invoke'  # localhost and the defined port + endpoint
-        body = {
-                "day": np.random.randint(1, 8),
-                "month": np.random.randint(1, 13),
-                "location": np.random.randint(1, 6),
-                "contract": np.random.randint(1, 4),
-                "activity": np.random.randint(1, 3),
-                "building_story": np.random.randint(1, 15),
-                "construction_type": np.random.randint(1, 5),
-                "assigned_task": np.random.randint(1, 3),
-                "lighting_conditions": np.random.randint(1, 51),
-                "atmospheric_conditions": np.random.randint(-15, 36),
-                "surface_conditions": np.random.randint(1, 5),
-                "worker_age": np.random.randint(18, 58),
-                "ppe": np.random.randint(0, 2),
-                "safety_training": np.random.randint(0, 2),
-                "specific_experience": np.random.randint(0, 40),
-                "experience": np.random.randint(0, 40)
-            }
-        values = body		
-        url_values = urllib.parse.urlencode(values)
-        print("Values from PACE inputs: ")
-        for n in values:
-            print("{} -> {}".format(n, str(values[n])))    
-        print("...")
-        # print("..")
-        # print("...")
-        full_url = url + '?' + url_values
-        data = urllib.request.urlopen(full_url)
-        string = data.read().decode('utf-8')
-        json_obj = json.loads(string)
-        if json_obj['incidenttype'] == "ALL CLEAR":
-            body["incident"]=2
-        elif json_obj['incidenttype'] == "ALERT: There is a chance of an accident":
-            body["incident"]=0
-        else:
-            body["incident"]=1    
-                        
-        prediction = body["incident"]
-    
-        output = prediction
-    
-    	
-        if(output==0):
-            flowr = 'Major Incident'
-    
-        if(output==1):
-            flowr = 'Incident'
-        
-        if(output==2):
-            flowr = 'All Clear'
+        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was (). If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location, condition, issueNotAddressed)
        
-        fulfillmentText= "The incident type seems to be..  {} !".format(flowr)
+        fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
