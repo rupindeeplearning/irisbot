@@ -87,11 +87,13 @@ def processRequest(req):
                         "lifespanCount": 5,
                         "parameters": {
                             "location": location1,
+                            "location.original": location1,
                             "fault":fault,
                             "condition":condition,
                             "issueNotAddressed":issueNotAddressed,
                             "atFault":atFault,
-                            "issueNumber":issueNumber
+                            "issueNumber":issueNumber,
+                            "issueNumber.original":issueNumber
                         }
                     }
                 ]
