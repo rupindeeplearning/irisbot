@@ -80,51 +80,7 @@ def processRequest(req):
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
-            "fulfillmentText": fulfillmentText,
-            "outputContexts": [
-                    {
-                        "name": session+"/contexts/faultfinder",
-                        "lifespanCount": 88,
-                        "parameters": {
-                            "location": location1,
-                            "location.original": location1,
-                            "fault":fault,
-                            "condition":condition,
-                            "issueNotAddressed":issueNotAddressed,
-                            "atFault":atFault,
-                            "issueNumber":issueNumber,
-                            "issueNumber.original":issueNumber
-                        }
-                    },
-                    {
-                        "name": session+"/contexts/getfault",
-                        "lifespanCount": 88,
-                        "parameters": {
-                            "location": location1,
-                            "location.original": location1,
-                            "fault":fault,
-                            "condition":condition,
-                            "issueNotAddressed":issueNotAddressed,
-                            "atFault":atFault,
-                            "issueNumber":issueNumber,
-                            "issueNumber.original":issueNumber
-                        }
-                    }
-                ],
-            "followupEventInput": {
-                "name": "WebhookResponse",
-                "parameters": {
-                    "location": location1,
-                    "location.original": location1,
-                    "fault":fault,
-                    "condition":condition,
-                    "issueNotAddressed":issueNotAddressed,
-                    "atFault":atFault,
-                    "issueNumber":issueNumber,
-                    "issueNumber.original":issueNumber
-                },
-                "languageCode": "en-US"
-            }
+            "fulfillmentText": fulfillmentText
         }
         
                
