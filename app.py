@@ -110,7 +110,21 @@ def processRequest(req):
                             "issueNumber.original":issueNumber
                         }
                     }
-                ]
+                ],
+            "followupEventInput": {
+                "name": "WebhookResponse",
+                "parameters": {
+                    "location": location1,
+                    "location.original": location1,
+                    "fault":fault,
+                    "condition":condition,
+                    "issueNotAddressed":issueNotAddressed,
+                    "atFault":atFault,
+                    "issueNumber":issueNumber,
+                    "issueNumber.original":issueNumber
+                },
+                "languageCode": "en-US"
+            }
         }
         
                
