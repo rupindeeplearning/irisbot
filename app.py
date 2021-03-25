@@ -49,13 +49,13 @@ def processRequest(req):
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
-    location=parameters.get("location")
+    location1=parameters.get("location")
     fault = parameters.get("fault")
     condition=parameters.get("condition")
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atFault")
     issueNumber=parameters.get("issueNumber")
-    if issueNumber is None:
+    if issueNumber is None or issueNumber == "":
         issueNumber = np.random.randint(10002,99999)
     int_features = [location,fault,condition,issueNotAddressed,atFault,issueNumber]
     
@@ -86,7 +86,7 @@ def processRequest(req):
                         "name": "projects/newagent-s9js/agent/sessions/15952dac-3d68-eca8-418f-0a1f0762dfa8/contexts/getfault",
                         "lifespanCount": 5,
                         "parameters": {
-                            "location": location,
+                            "location": location1,
                             "fault":fault,
                             "condition":condition,
                             "issueNotAddressed":issueNotAddressed,
