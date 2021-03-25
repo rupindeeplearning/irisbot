@@ -84,7 +84,7 @@ def processRequest(req):
             "outputContexts": [
                     {
                         "name": session+"/contexts/faultfinder",
-                        "lifespanCount": 5,
+                        "lifespanCount": 88,
                         "parameters": {
                             "location": location1,
                             "location.original": location1,
@@ -98,7 +98,7 @@ def processRequest(req):
                     },
                     {
                         "name": session+"/contexts/getfault",
-                        "lifespanCount": 5,
+                        "lifespanCount": 88,
                         "parameters": {
                             "location": location1,
                             "location.original": location1,
