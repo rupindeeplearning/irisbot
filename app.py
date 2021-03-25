@@ -95,7 +95,7 @@ def processRequest(req):
                             "issueNumber":issueNumber,
                             "issueNumber.original":issueNumber
                         }
-                    }
+                    },
                     {
                         "name": session+"/contexts/getfault",
                         "lifespanCount": 5,
