@@ -49,7 +49,7 @@ def processRequest(req):
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
-    location1=parameters.get("location")
+    location1="location 5"#parameters.get("location")
     fault = parameters.get("fault")
     condition=parameters.get("condition")
     issueNotAddressed=parameters.get("issueNotAddressed")
@@ -86,7 +86,7 @@ def processRequest(req):
                         "name": "projects/newagent-s9js/agent/sessions/15952dac-3d68-eca8-418f-0a1f0762dfa8/contexts/getfault",
                         "lifespanCount": 5,
                         "parameters": {
-                            "location": "location 5"#location1,
+                            "location": location1,
                             "fault":fault,
                             "condition":condition,
                             "issueNotAddressed":issueNotAddressed,
