@@ -75,7 +75,7 @@ def processRequest(req):
     
     if (intent=='Fault intent'):
     
-        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location1, condition, issueNotAddressed)
+        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. The issue number is {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location1, condition, issueNotAddressed, issueNumber)
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
