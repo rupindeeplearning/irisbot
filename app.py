@@ -49,20 +49,17 @@ def processRequest(req):
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
-    location1="location 5"#parameters.get("location")
+    location=parameters.get("location")
     fault = parameters.get("fault")
     condition=parameters.get("condition")
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atFault")
-    issueNumber=parameters.get("issueNumber")
-    if issueNumber == "":
-        issueNumber = np.random.randint(10002,99999)
-    int_features = [location1,fault,condition,issueNotAddressed,atFault,issueNumber]
+    int_features = [location,fault,condition,issueNotAddressed,atFault]
     
     final_features = [np.array(int_features)]
 	 
     intent = result.get("intent").get('displayName')
-    session = req.get("session")
+    
     
     
     
@@ -75,7 +72,7 @@ def processRequest(req):
     
     if (intent=='Fault intent'):
     
-        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. The issue number is {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location1, condition, issueNotAddressed, issueNumber)
+        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location, condition, issueNotAddressed)
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
