@@ -86,7 +86,7 @@ def processRequest(req):
                         "name": "projects/newagent-s9js/agent/sessions/15952dac-3d68-eca8-418f-0a1f0762dfa8/contexts/getfault",
                         "lifespanCount": 5,
                         "parameters": {
-                            "location": 5#location1,
+                            "location": "location 5"#location1,
                             "fault":fault,
                             "condition":condition,
                             "issueNotAddressed":issueNotAddressed,
