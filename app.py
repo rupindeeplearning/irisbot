@@ -55,7 +55,7 @@ def processRequest(req):
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atFault")
     issueNumber=parameters.get("issueNumber")
-    if issueNumber is None or issueNumber == "":
+    if issueNumber == "":
         issueNumber = np.random.randint(10002,99999)
     int_features = [location1,fault,condition,issueNotAddressed,atFault,issueNumber]
     
