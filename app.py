@@ -62,7 +62,7 @@ def processRequest(req):
     final_features = [np.array(int_features)]
 	 
     intent = result.get("intent").get('displayName')
-    
+    session = req.get("session")
     
     
     
@@ -83,7 +83,7 @@ def processRequest(req):
             "fulfillmentText": fulfillmentText,
             "outputContexts": [
                     {
-                        "name": "projects/newagent-s9js/agent/sessions/15952dac-3d68-eca8-418f-0a1f0762dfa8/contexts/getFault",
+                        "name": session+"/contexts/usercontext",
                         "lifespanCount": 5,
                         "parameters": {
                             "location": location1,
