@@ -83,7 +83,7 @@ def processRequest(req):
             "fulfillmentText": fulfillmentText,
             "outputContexts": [
                     {
-                        "name": session+"/contexts/usercontext",
+                        "name": session+"/contexts/getFault",
                         "lifespanCount": 5,
                         "parameters": {
                             "location": location1,
