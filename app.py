@@ -83,7 +83,21 @@ def processRequest(req):
             "fulfillmentText": fulfillmentText,
             "outputContexts": [
                     {
-                        "name": session+"/contexts/getFault",
+                        "name": session+"/contexts/faultfinder",
+                        "lifespanCount": 5,
+                        "parameters": {
+                            "location": location1,
+                            "location.original": location1,
+                            "fault":fault,
+                            "condition":condition,
+                            "issueNotAddressed":issueNotAddressed,
+                            "atFault":atFault,
+                            "issueNumber":issueNumber,
+                            "issueNumber.original":issueNumber
+                        }
+                    }
+                    {
+                        "name": session+"/contexts/getfault",
                         "lifespanCount": 5,
                         "parameters": {
                             "location": location1,
