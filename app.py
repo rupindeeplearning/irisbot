@@ -125,11 +125,21 @@ def formupdate():
     
     
     
+    oic_addressed = new_dict_1[3]
+    oic_addressed_1=""
+    oic_addressed_2=""
+    oic_addressed_3=""
+    if oic_addressed == "positive":
+        oic_addressed_1="checked"
+    if oic_addressed == "negative":
+        oic_addressed_2="checked"
+    if oic_addressed == "na":
+        oic_addressed_3="checked"
     
 
 
 
-    return render_template('index.html',bot_message="If the form is correct, submit the form.",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition_1 = oic_condition_1, oic_condition_2 = oic_condition_2, oic_condition_3 = oic_condition_3, oic_description = new_dict, oic_location = new_dict_1[0])       
+    return render_template('index.html',bot_message="If the form is correct, submit the form.",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition_1 = oic_condition_1, oic_condition_2 = oic_condition_2, oic_condition_3 = oic_condition_3, oic_addressed_1 = oic_addressed_1, oic_addressed_2 = oic_addressed_2, oic_addressed_3 = oic_addressed_3,  oic_description = new_dict, oic_location = new_dict_1[0])       
     
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
