@@ -130,11 +130,11 @@ def formupdate():
     oic_addressed_2=""
     oic_addressed_3=""
     if oic_addressed == "positive":
-        oic_addressed_1="checked"
+        oic_addressed_1="checked = \"checked\""
     if oic_addressed == "negative":
-        oic_addressed_2="checked"
+        oic_addressed_2="checked = \"checked\""
     if oic_addressed == "na":
-        oic_addressed_3="checked"
+        oic_addressed_3="checked = \"checked\""
     
 
 
