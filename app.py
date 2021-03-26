@@ -42,6 +42,7 @@ def webhook():
     #r.headers['Content-Type'] = 'application/json'
     print("Message: {}".format(res[0]))
     print("Date: {}".format(res[1]))
+    formupdate()    
     return make_response(jsonify(res())) #render_template('webhook.html')
 
 
