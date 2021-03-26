@@ -1,5 +1,6 @@
 import numpy as np
-from flask import Flask, request, make_response, render_template
+from flask import Flask, request, make_response
+from flask import render_template
 import json
 import pickle
 from flask_cors import cross_origin
@@ -39,7 +40,7 @@ def webhook():
     #print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    return r
+    return render_template("index.html", bot_message = res[0], oic_date=res[1])
 
 
 # processing the request from dialogflow
@@ -78,7 +79,7 @@ def processRequest(req):
         print(flowr)
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return render_template("index.html", bot_message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date="2021-03-25")
+        return ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]
         '''{
             "fulfillmentText": fulfillmentText
         }'''
