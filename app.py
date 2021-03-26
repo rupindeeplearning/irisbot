@@ -42,7 +42,7 @@ def webhook():
     #r.headers['Content-Type'] = 'application/json'
     print("Message: {}".format(res[0]))
     print("Date: {}".format(res[1]))
-    return render_template('blips.html')
+    return render_template('/blips.html')
 
 
 # processing the request from dialogflow
