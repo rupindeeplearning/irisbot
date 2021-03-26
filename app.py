@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, jsonify
 from flask import render_template, redirect, url_for
 import json
 import pickle
