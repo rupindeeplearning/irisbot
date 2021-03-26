@@ -102,7 +102,7 @@ def formupdate():
     new_dict = pickle.load(infile)
     infile.close()
     print(new_dict)
-    return render_template('index.html')       
+    return render_template('index.html',bot_message=new_dict)       
     
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
