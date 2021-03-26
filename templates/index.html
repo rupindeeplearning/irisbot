@@ -723,9 +723,16 @@ input.form-checkbox:checked + label:after,
     /* Injected CSS Code */
 
 </style>
-    <div class="container" style="display: flex; height: 100px;">
+    <div class="container" style="display: flex; height: 150px;">
         <div style="width: 25%;">
 			<div class="chatbot">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<iframe
 				allow="microphone;"
 				width="250"
@@ -735,6 +742,13 @@ input.form-checkbox:checked + label:after,
 			<br>
 			<a class="btn btn-primary" href="/formupdate"><p>Update Form</p></a>
 			<br>
+			<li class="form-line" data-type="control_button" id="id_18">
+				<div class="form-input-wide" data-layout="full" id="cid_18">
+					<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
+						<a href="/dbupdated" class='btn btn-primary'>Submit form</a>						
+					</div>
+				</div>
+			</li>			
 			</div>
         </div>
         <div style="flex-grow: 1;">
@@ -807,7 +821,7 @@ input.form-checkbox:checked + label:after,
 					  <input aria-labelledby="label_20" autoComplete="on" class="form-textbox validate[limitDate, validateLiteDate]" data-age=""
 							 data-format="yyyymmdd" data-maxlength="12" data-seperator="-" id="lite_mode_20" maxLength="12"
 							 placeholder="YYYY-MM-DD" size="12" style=" background-color: lightyellow"
-							 type="text" value={{ oic_date }} />
+							 type="text" value={{ oic_date }} >
 					  <label aria-hidden="false" class="form-sub-label" for="input_28" id="lite_mode_20s"
 							 style="min-height:13px"> pre populated field </label>
 						<img alt="Pick a Date" aria-hidden="true" class=" newDefaultTheme-dateIcon icon-liteMode"
