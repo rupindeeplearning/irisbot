@@ -110,9 +110,10 @@ def formupdate():
     new_dict_1 = pickle.load(infile)
     infile.close()
     print(new_dict_1)
-    oic_date = datetime.today().strftime('%Y-%m-%d')    
-    now = datetime.datetime.now()
-    oic_time = str(now.hour) + ":" + str(now.minute)
+    oic_date = datetime.today().strftime('%Y-%m-%d')   
+    import time
+    year, month, day, hour, minute = time.strftime("%Y %m %d %H %M").split()
+    oic_time = hour + ":" + minute    
     
     oic_condition = new_dict_1[2]
     oic_condition_1=""
