@@ -42,7 +42,7 @@ def webhook():
     #r.headers['Content-Type'] = 'application/json'
     print("Message: {}".format(res[0]))
     print("Date: {}".format(res[1]))
-    return render_template('webhook.html')
+    return make_response(jsonify(results()))render_template('webhook.html')
 
 
 # processing the request from dialogflow
@@ -93,6 +93,11 @@ def processRequest(req):
 
 #if __name__ == '__main__':
     #app.run()
+@app.route('/formupdate')
+def formupdate():
+    print("Update works so far")
+    return render_template('index.html')       
+    
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     print("Starting app on port %d" % port)
