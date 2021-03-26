@@ -15,11 +15,10 @@ from urllib.request import urlopen
 from datetime import datetime
 
 
-
-
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
 filename = 'description.pkl'
+filename1 = 'parameters.pkl'
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -58,13 +57,17 @@ def processRequest(req):
     issueNotAddressed=parameters.get("issueNotAddressed")
     atFault=parameters.get("atfault")
     int_features = [location,fault,condition,issueNotAddressed,atFault]
+        
+    outfile = open(filename1,'wb')   
+    pickle.dump(int_features,outfile)
+    outfile.close()
     
     final_features = [np.array(int_features)]
 	 
     intent = result.get("intent").get('displayName')
     
     
-    oic_date = datetime.today().strftime('%Y-%m-%d')
+    
     
     
     
@@ -75,14 +78,15 @@ def processRequest(req):
     
     if (intent=='IrisData'):
     
-        flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location, condition, issueNotAddressed)
+        flowr = "You noticed {} committing the infraction of {} at {}. The condition was {}. The issue resolution was {}. If this is correct click update below and then submit the form.".format(atFault, fault, location, condition, issueNotAddressed)
         print(flowr)
         fulfillmentText= flowr
+        flowr_1 = "You noticed {} committing the infraction of {} at {}. The condition was {}. The issue resolution was {}.".format(atFault, fault, location, condition, issueNotAddressed)
         outfile = open(filename,'wb')   
-        pickle.dump(flowr,outfile)
+        pickle.dump(flowr_1,outfile)
         outfile.close()        
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
+        #returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
                 
         return {"fulfillmentText": fulfillmentText}
         '''{
@@ -102,7 +106,21 @@ def formupdate():
     new_dict = pickle.load(infile)
     infile.close()
     print(new_dict)
-    return render_template('index.html',bot_message=new_dict)       
+    infile = open(filename1,'rb')
+    new_dict_1 = pickle.load(infile)
+    infile.close()
+    print(new_dict_1)
+    oic_date = datetime.today().strftime('%Y-%m-%d')    
+    
+        
+    
+    
+    
+    
+
+
+
+    return render_template('index.html',bot_message="If the form is correct, submit the form.",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition = new_dict_1[2], oic_description = new_dict, oic_location = new_dict_1[0])       
     
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

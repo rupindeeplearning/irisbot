@@ -851,7 +851,7 @@ input.form-checkbox:checked + label:after,
               </span>
               <input class="form-checkbox" id="input_23_1" name="q21_condition[]" type="checkbox"
                      value="Unsafe condition"/>
-              <label for="input_21_1" id="label_input_23_1"> Safety Absolute Violation (For lead supervisors)  </label>
+              <label for="input_21_1" id="label_input_23_1"> Safety Absolute Violation (For lead supervisors) {{ oic_condition }} </label>
             </span>
                     </div>
                 </div>
@@ -862,7 +862,7 @@ input.form-checkbox:checked + label:after,
                 <div class="form-input-wide" data-layout="full" id="cid_31">
                     <textarea aria-labelledby="label_31" class="form-textarea" data-component="textarea"
                               id="input_31" name="q31_observation"
-                              style="width:648px;height:163px"></textarea>
+                              style="width:648px;height:163px">{{ oic_description }}</textarea>
                 </div>
             </li>
             <li class="form-line" data-type="control_radio" id="id_32">
@@ -886,7 +886,7 @@ input.form-checkbox:checked + label:after,
               <span class="dragger-item">
               </span>
               <input class="form-radio" id="input_33_1" name="q32_didYou32" type="radio" value="No"/>
-              <label for="input_32_1" id="label_input_33_1"> NA </label>
+              <label for="input_32_1" id="label_input_33_1"> NA {{ oic_addressed }}</label>
             </span>
                     </div>
                 </div>
@@ -897,7 +897,7 @@ input.form-checkbox:checked + label:after,
                 <div class="form-input-wide" data-layout="half" id="cid_26">
                     <input aria-labelledby="label_26" class="form-textbox" data-component="textbox" data-type="input-textbox"
                            id="input_26" name="q26_contractors" size="310" style="width:310px" type="text"
-                           value=""/>
+                           value="{{ oic_atfault }}"/>
                 </div>
             </li>
             <li class="form-line" data-type="control_divider" id="id_34">
@@ -912,7 +912,7 @@ input.form-checkbox:checked + label:after,
                     Location </label>
                 <div class="form-input-wide" data-layout="half" id="cid_27">
                     <input aria-labelledby="label_27" class="form-textbox" data-component="textbox" data-type="input-textbox" id="input_27"
-                           name="q27_location" size="310" style="width:310px" type="text" value=""/>
+                           name="q27_location" size="310" style="width:310px" type="text" value="{{ oic_location }}"/>
                 </div>
             </li>
             <li class="form-line" data-type="control_textbox" id="id_28">
@@ -921,7 +921,7 @@ input.form-checkbox:checked + label:after,
           <span class="form-sub-label-container" style="vertical-align:top">
             <input aria-labelledby="label_28 sublabel_input_28" class="form-textbox" data-component="textbox" data-type="input-textbox" id="input_28"
                    name="q28_latitude" size="310" style="width:310px; background-color: lightyellow  " type="text"
-                   value=""/>
+                   value="{{ oic_latitude }}"/>
             <label aria-hidden="false" class="form-sub-label" for="input_28" id="sublabel_input_28"
                    style="min-height:13px"> pre populated field </label>
           </span>
@@ -934,7 +934,7 @@ input.form-checkbox:checked + label:after,
           <span class="form-sub-label-container" style="vertical-align:top">
             <input aria-labelledby="label_29 sublabel_input_29" class="form-textbox" data-component="textbox" data-type="input-textbox" id="input_29"
                    name="q29_longitude" size="310" style="width:310px;  background-color: lightyellow" type="text"
-                   value=""/>
+                   value="{{ oic_longitude }}"/>
             <label aria-hidden="false" class="form-sub-label" for="input_29" id="sublabel_input_29"
                    style="min-height:13px"> pre populated field </label>
           </span>
