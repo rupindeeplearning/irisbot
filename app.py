@@ -79,7 +79,7 @@ def processRequest(req):
         print(flowr)
         fulfillmentText= flowr
         outfile = open(filename,'wb')   
-        pickle.dump(dogs_dict,outfile)
+        pickle.dump(flowr,outfile)
         outfile.close()        
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
