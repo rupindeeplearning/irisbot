@@ -20,8 +20,8 @@ app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
 
 @app.route('/')
-def hello():
-    return 'Hello World'
+def index():
+    return render_template('index.html')
 
 # geting and sending response to dialogflow
 @app.route('/webhook', methods=['POST'])
@@ -78,7 +78,7 @@ def processRequest(req):
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date=oic_date)
+        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date="2021-03-25")
         '''{
             "fulfillmentText": fulfillmentText
         }'''
