@@ -43,7 +43,7 @@ def webhook():
     print("Message: {}".format(res[0]))
     print("Date: {}".format(res[1]))
     formupdate()    
-    return make_response(jsonify(res())) #render_template('webhook.html')
+    return make_response(jsonify(res[0])) #render_template('webhook.html')
 
 
 # processing the request from dialogflow
