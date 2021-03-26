@@ -63,7 +63,7 @@ def processRequest(req):
     intent = result.get("intent").get('displayName')
     
     
-    
+    oic_date = datetime.today().strftime('%Y-%m-%d')
     
     
     
@@ -78,7 +78,7 @@ def processRequest(req):
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic-date=datetime.today().strftime('%Y-%m-%d'))
+        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date=oic_date)
         '''{
             "fulfillmentText": fulfillmentText
         }'''

@@ -1,3 +1,4 @@
+<!doctype html>
 <script src="https://cdn.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.22860" type="text/javascript"></script>
 <script src="https://cdn.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.22860" type="text/javascript"></script>
 <script src="https://cdn.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.22860" type="text/javascript"></script>
@@ -760,7 +761,7 @@ input.form-checkbox:checked + label:after,
             </li>
 			<div class="header-text httac htvam">
 				<h3 class="form-header" data-component="header" id="header_19">
-					{{bot-message}}
+					<p> {{ bot-message }} </p>
 				</h3>
 				<img alt='voice input' data-target="#myModal" data-toggle="modal" height="50" src="speech_icon.png"
 					 style="margin:0 0 0 0"  width="50">
@@ -802,7 +803,7 @@ input.form-checkbox:checked + label:after,
               <input aria-labelledby="label_20" autoComplete="on" class="form-textbox validate[limitDate, validateLiteDate]" data-age=""
                      data-format="yyyymmdd" data-maxlength="12" data-seperator="-" id="lite_mode_20" maxLength="12"
                      placeholder="YYYY-MM-DD" size="12" style=" background-color: lightyellow"
-                     type="text" value={{oic-date}}/>
+                     type="text" value={{ oic_date }} />
               <label aria-hidden="false" class="form-sub-label" for="input_28" id="lite_mode_20s"
                      style="min-height:13px"> pre populated field </label>
                 <img alt="Pick a Date" aria-hidden="true" class=" newDefaultTheme-dateIcon icon-liteMode"
