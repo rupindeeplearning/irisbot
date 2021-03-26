@@ -758,7 +758,13 @@ input.form-checkbox:checked + label:after,
 
                 </div>
             </li>
-
+			<div class="header-text httac htvam">
+				<h3 class="form-header" data-component="header" id="header_19">
+					{{bot-message}}
+				</h3>
+				<img alt='voice input' data-target="#myModal" data-toggle="modal" height="50" src="speech_icon.png"
+					 style="margin:0 0 0 0"  width="50">
+			</div>
             <li class="form-line" data-type="control_datetime" id="id_20">
                 <label class="form-label form-label-top form-label-auto" for="lite_mode_20" id="label_20"> Date </label>
                 <div class="form-input-wide" data-layout="half" id="cid_20">
@@ -796,7 +802,7 @@ input.form-checkbox:checked + label:after,
               <input aria-labelledby="label_20" autoComplete="on" class="form-textbox validate[limitDate, validateLiteDate]" data-age=""
                      data-format="yyyymmdd" data-maxlength="12" data-seperator="-" id="lite_mode_20" maxLength="12"
                      placeholder="YYYY-MM-DD" size="12" style=" background-color: lightyellow"
-                     type="text" value="2021-01-28"/>
+                     type="text" value={{oic-date}}/>
               <label aria-hidden="false" class="form-sub-label" for="input_28" id="lite_mode_20s"
                      style="min-height:13px"> pre populated field </label>
                 <img alt="Pick a Date" aria-hidden="true" class=" newDefaultTheme-dateIcon icon-liteMode"

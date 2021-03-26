@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, render_template
 import json
 import pickle
 from flask_cors import cross_origin
@@ -10,6 +10,8 @@ import urllib.parse
 import urllib.request
 from urllib.request import urlopen
 
+
+from datetime import datetime
 
 
 
@@ -76,9 +78,10 @@ def processRequest(req):
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return {
+        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic-date=datetime.today().strftime('%Y-%m-%d'))
+        '''{
             "fulfillmentText": fulfillmentText
-        }
+        }'''
         
                
     #else:
