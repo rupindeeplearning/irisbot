@@ -78,7 +78,7 @@ def processRequest(req):
        
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return render_template("index.html", bot-message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date="2021-03-25")
+        return render_template("index.html", bot_message = "If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date="2021-03-25")
         '''{
             "fulfillmentText": fulfillmentText
         }'''
