@@ -40,6 +40,8 @@ def webhook():
     #print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
+    print(res[0])
+    print(res[1])
     return render_template("index.html", bot_message = res[0], oic_date=res[1])
 
 
