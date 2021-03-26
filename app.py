@@ -19,7 +19,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 model = pickle.load(open('rf.pkl', 'rb'))
-
+filename = 'description.pkl'
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -78,6 +78,9 @@ def processRequest(req):
         flowr = "You noticed {} committing the infraction {} at {}. The condition was a/an {}. The issue resolution was {}. If this is correct click submit on the form. If you have to make any changes, use the other chatbot.".format(atFault, fault, location, condition, issueNotAddressed)
         print(flowr)
         fulfillmentText= flowr
+        outfile = open(filename,'wb')   
+        pickle.dump(dogs_dict,outfile)
+        outfile.close()        
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
                 
@@ -95,6 +98,10 @@ def processRequest(req):
 @app.route('/formupdate')
 def formupdate():
     print("Update works so far")
+    infile = open(filename,'rb')
+    new_dict = pickle.load(infile)
+    infile.close()
+    print(new_dict)
     return render_template('index.html')       
     
 if __name__ == '__main__':
