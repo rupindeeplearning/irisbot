@@ -36,14 +36,11 @@ def webhook():
 
     res = processRequest(req)
 
-    #res = json.dumps(res, indent=4)
+    res = json.dumps(res, indent=4)
     #print(res)
-    #r = make_response(res)
-    #r.headers['Content-Type'] = 'application/json'
-    print("Message: {}".format(res[0]))
-    print("Date: {}".format(res[1]))
-    formupdate()    
-    return make_response(jsonify(res[0])) #render_template('webhook.html')
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'   
+    return r #make_response(jsonify(res[0])) #render_template('webhook.html')
 
 
 # processing the request from dialogflow
@@ -83,7 +80,8 @@ def processRequest(req):
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
-        return returnlist
+                
+        return {"fulfillmentText": fulfillmentText}
         '''{
             "fulfillmentText": fulfillmentText
         }'''
