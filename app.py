@@ -40,8 +40,8 @@ def webhook():
     #print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    print(res[0])
-    print(res[1])
+    print("Message: {}".format(res[0]))
+    print("Date: {}".format(res[1]))
     return render_template("index.html", bot_message = res[0], oic_date=res[1])
 
 
@@ -81,7 +81,8 @@ def processRequest(req):
         print(flowr)
         fulfillmentText= flowr
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]
+        returnlist = ["If the following form is correct, click submit to send. Otherwise, either use the chatbot to enter values again or manually enter data in the form.", oic_date]        
+        return returnlist
         '''{
             "fulfillmentText": fulfillmentText
         }'''
