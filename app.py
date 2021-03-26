@@ -143,6 +143,53 @@ def formupdate():
 
 
     return render_template('index.html',bot_message="If the form is correct, submit the form.",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition_1 = oic_condition_1, oic_condition_2 = oic_condition_2, oic_condition_3 = oic_condition_3, oic_addressed_1 = oic_addressed_1, oic_addressed_2 = oic_addressed_2, oic_addressed_3 = oic_addressed_3,  oic_description = new_dict, oic_location = new_dict_1[0], oic_time = oic_time)       
+
+@app.route('/dbupdated')
+def dbupdated():
+    print("Update works so far")
+    infile = open(filename,'rb')
+    new_dict = pickle.load(infile)
+    infile.close()
+    print(new_dict)
+    infile = open(filename1,'rb')
+    new_dict_1 = pickle.load(infile)
+    infile.close()
+    print(new_dict_1)
+    oic_date = datetime.today().strftime('%Y-%m-%d')   
+    import time
+    year, month, day, hour, minute = time.strftime("%Y %m %d %H %M").split()
+    oic_time = hour + ":" + minute    
+    
+    oic_condition = new_dict_1[2]
+    oic_condition_1=""
+    oic_condition_2=""
+    oic_condition_3=""
+    if oic_condition == "unsafe act":
+        oic_condition_1="checked"
+    if oic_condition == "unsafe condition":
+        oic_condition_2="checked"
+    if oic_condition == "positive observation":
+        oic_condition_3="checked"
+    
+    
+    
+    oic_addressed = new_dict_1[3]
+    oic_addressed_1=""
+    oic_addressed_2=""
+    oic_addressed_3=""
+    if oic_addressed == "positive":
+        oic_addressed_1="checked = 'checked'"
+    if oic_addressed == "negative":
+        oic_addressed_2="checked = 'checked'"
+    if oic_addressed == "na":
+        oic_addressed_3="checked = 'checked'"
+    
+
+
+
+    return render_template('dbupdate.html',bot_message="Your OIC form has been sent - thank you",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition_1 = oic_condition_1, oic_condition_2 = oic_condition_2, oic_condition_3 = oic_condition_3, oic_addressed_1 = oic_addressed_1, oic_addressed_2 = oic_addressed_2, oic_addressed_3 = oic_addressed_3,  oic_description = new_dict, oic_location = new_dict_1[0], oic_time = oic_time) 
+
+
     
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
