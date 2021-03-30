@@ -17,6 +17,7 @@ $(document).ready(function() {
     $('.chatbot').hide();
 	$('.chatbutton').click(function(){
 		var innerhtml = $('.chatbutton').html();
+		var longitudehtml = $('#input_29').html();
 		if (innerhtml==="Show Chatbot"){
 			$('.chatbutton').html("Hide Chatbot");
 			$('.chatbot').show();
@@ -24,6 +25,14 @@ $(document).ready(function() {
 		if (innerhtml==="Hide Chatbot"){
 			$('.chatbutton').html("Show Chatbot");
 			$('.chatbot').hide();
+			}
+		if (longitudehtml===""){
+			$('#nosendform').show();
+			$('#sendform').hide();
+			}
+		if (longitudehtml!=""){
+			$('#sendform').show();
+			$('#nosendform').hide();
 			}
 		
 		}
@@ -793,10 +802,17 @@ input.form-checkbox:checked + label:after,
 						<br>
 						</div>
 					</div>	
-					<li class="form-line" data-type="control_button" id="id_18">
-						<div class="form-input-wide" data-layout="full" id="cid_18">
+					<li class="form-line" data-type="control_button" id="id_54">
+						<div class="form-input-wide" data-layout="full" id="cid_54">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<a href="/dbupdated" class='btn btn-primary'>Submit</a>						
+								<p class='btn btn-primary' id='nosendform'  color='red'>Submit</p>						
+							</div>
+						</div>
+					</li>
+					<li class="form-line" data-type="control_button" id="id_55">
+						<div class="form-input-wide" data-layout="full" id="cid_55">
+							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
+								<a href="/dbupdated" class='btn btn-primary' id='sendform'>Submit</a>						
 							</div>
 						</div>
 					</li>					
@@ -837,7 +853,7 @@ input.form-checkbox:checked + label:after,
 					  <input aria-labelledby="label_20" autoComplete="on" class="form-textbox validate[limitDate, validateLiteDate]" data-age=""
 							 data-format="yyyymmdd" data-maxlength="12" data-seperator="-" id="lite_mode_20" maxLength="12"
 							 placeholder="YYYY-MM-DD" size="12" style=" background-color: lightyellow"
-							 type="text" value={{ oic_date }}  required>
+							 type="text" value={{ oic_date }} >
 					  <label aria-hidden="false" class="form-sub-label" for="input_28" id="lite_mode_20s"
 							 style="min-height:13px"> pre populated field </label>
 						<img alt="Pick a Date" aria-hidden="true" class=" newDefaultTheme-dateIcon icon-liteMode"
@@ -890,7 +906,7 @@ input.form-checkbox:checked + label:after,
 						<div class="form-input-wide" data-layout="full" id="cid_31">
 							<textarea aria-labelledby="label_31" class="form-textarea" data-component="textarea"
 									  id="input_31" name="q31_observation"
-									  style="width:648px;height:163px"  required>{{ oic_description }}</textarea>
+									  style="width:648px;height:163px">{{ oic_description }}</textarea>
 						</div>
 					</li>
 					<li class="form-line" data-type="control_radio" id="id_32">
@@ -925,7 +941,7 @@ input.form-checkbox:checked + label:after,
 						<div class="form-input-wide" data-layout="half" id="cid_26">
 							<input aria-labelledby="label_26" class="form-textbox" data-component="textbox" data-type="input-textbox"
 								   id="input_26" name="q26_contractors" size="310" style="width:310px" type="text"
-								   value="{{ oic_atfault }}"  required/>
+								   value="{{ oic_atfault }}"/>
 						</div>
 					</li>
 					<li class="form-line" data-type="control_divider" id="id_34">
@@ -1062,13 +1078,20 @@ input.form-checkbox:checked + label:after,
 							</div>
 						</div>
 					</li>
-					<li class="form-line" data-type="control_button" id="id_18">
-						<div class="form-input-wide" data-layout="full" id="cid_18">
+					<li class="form-line" data-type="control_button" id="id_54">
+						<div class="form-input-wide" data-layout="full" id="cid_54">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<a href="/dbupdated" class='btn btn-primary'>Submit</a>						
+								<p class='btn btn-primary' id='nosendform'  color='red'>Submit</p>						
 							</div>
 						</div>
 					</li>
+					<li class="form-line" data-type="control_button" id="id_55">
+						<div class="form-input-wide" data-layout="full" id="cid_55">
+							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
+								<a href="/dbupdated" class='btn btn-primary' id='sendform'>Submit</a>						
+							</div>
+						</div>
+					</li>		
 				</ul>
 			</div>
 			</script>
