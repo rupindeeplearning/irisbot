@@ -11,7 +11,25 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="../static/js/chatbot.js"></script>
+<!--<script src="../static/js/chatbot.js"></script>-->
+<script>
+$(document).ready(function() {
+    $('.chatbot').hide();
+	$('.chatbutton').click(function(){
+		var innerhtml = $('.chatbutton').html();
+		if (innerhtml==="Show Chatbot"){
+			$('.chatbutton').html("Hide Chatbot");
+			$('.chatbot').show();
+			}
+		if (innerhtml==="Hide Chatbot"){
+			$('.chatbutton').html("Show Chatbot");
+			$('.chatbot').hide();
+			}
+		
+		}
+	);
+});
+</script>
 <script type="text/javascript">
 	JotForm.init(function(){
 
