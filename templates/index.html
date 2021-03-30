@@ -837,7 +837,7 @@ input.form-checkbox:checked + label:after,
 					  <input aria-labelledby="label_20" autoComplete="on" class="form-textbox validate[limitDate, validateLiteDate]" data-age=""
 							 data-format="yyyymmdd" data-maxlength="12" data-seperator="-" id="lite_mode_20" maxLength="12"
 							 placeholder="YYYY-MM-DD" size="12" style=" background-color: lightyellow"
-							 type="text" value={{ oic_date }} >
+							 type="text" value={{ oic_date }}  required>
 					  <label aria-hidden="false" class="form-sub-label" for="input_28" id="lite_mode_20s"
 							 style="min-height:13px"> pre populated field </label>
 						<img alt="Pick a Date" aria-hidden="true" class=" newDefaultTheme-dateIcon icon-liteMode"
@@ -890,7 +890,7 @@ input.form-checkbox:checked + label:after,
 						<div class="form-input-wide" data-layout="full" id="cid_31">
 							<textarea aria-labelledby="label_31" class="form-textarea" data-component="textarea"
 									  id="input_31" name="q31_observation"
-									  style="width:648px;height:163px">{{ oic_description }}</textarea>
+									  style="width:648px;height:163px"  required>{{ oic_description }}</textarea>
 						</div>
 					</li>
 					<li class="form-line" data-type="control_radio" id="id_32">
@@ -925,7 +925,7 @@ input.form-checkbox:checked + label:after,
 						<div class="form-input-wide" data-layout="half" id="cid_26">
 							<input aria-labelledby="label_26" class="form-textbox" data-component="textbox" data-type="input-textbox"
 								   id="input_26" name="q26_contractors" size="310" style="width:310px" type="text"
-								   value="{{ oic_atfault }}"/>
+								   value="{{ oic_atfault }}"  required/>
 						</div>
 					</li>
 					<li class="form-line" data-type="control_divider" id="id_34">
