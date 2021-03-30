@@ -16,6 +16,10 @@
 $(document).ready(function() {
     $('.chatbot').hide();
 	var longitudehtml = $('#input_29').html();
+	$('#input_29').change(function(){
+		$('#sendform1').show();
+		$('#nosendform1').hide();
+		});	
 	if (longitudehtml===""){
 		$('#nosendform').show();
 		$('#sendform').hide();
@@ -813,7 +817,7 @@ input.form-checkbox:checked + label:after,
 					<li class="form-line" data-type="control_button" id="id_54">
 						<div class="form-input-wide" data-layout="full" id="cid_54">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<p class='btn btn-primary' id='nosendform'  color='red'>Submit</p>						
+								<p class='btn btn-primary' id='nosendform'  color='red'>Incomplete</p>						
 							</div>
 						</div>
 					</li>
@@ -1089,7 +1093,7 @@ input.form-checkbox:checked + label:after,
 					<li class="form-line" data-type="control_button" id="id_54">
 						<div class="form-input-wide" data-layout="full" id="cid_54">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<p class='btn btn-primary' id='nosendform1'  color='red'>Submit</p>						
+								<p class='btn btn-primary' id='nosendform1'  color='red'>Incomplete</p>						
 							</div>
 						</div>
 					</li>
