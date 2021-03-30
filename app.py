@@ -13,11 +13,11 @@ from urllib.request import urlopen
 
 
 from datetime import datetime
-import psycopg2
+#import psycopg2
 
-connection = psycopg2.connect(database="mlops", user="postgres", password="S4Eh3j35yktYImAjjSaZ", host="mlops-postgre.cqrst0aq2gxj.us-east-2.rds.amazonaws.com", port=5432)
+#connection = psycopg2.connect(database="mlops", user="postgres", password="S4Eh3j35yktYImAjjSaZ", host="mlops-postgre.cqrst0aq2gxj.us-east-2.rds.amazonaws.com", port=5432)
 
-cursor = connection.cursor()
+#cursor = connection.cursor()
 
 
 app = Flask(__name__)
