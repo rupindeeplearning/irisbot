@@ -19,23 +19,29 @@ $(document).ready(function() {
 	$('#input_29').change(function(){
 		$('#sendform1').show();
 		$('#nosendform1').hide();
-		});	
-	if (longitudehtml===""){
-		$('#nosendform').show();
-		$('#sendform').hide();
+		});			
+	$('#updateform').click(function(){
+		var longitudehtml = $('#input_29').html();
+		
+		if (longitudehtml===""){
+			$('#nosendform').show();
+			$('#sendform').hide();
+			}
+		if (longitudehtml!=""){
+			$('#sendform').show();
+			$('#nosendform').hide();
+			}
+		if (longitudehtml===""){
+			$('#nosendform1').show();
+			$('#sendform1').hide();
+			}
+		if (longitudehtml!=""){
+			$('#sendform1').show();
+			$('#nosendform1').hide();
+			}		
+		
 		}
-	if (longitudehtml!=""){
-		$('#sendform').show();
-		$('#nosendform').hide();
-		}
-	if (longitudehtml===""){
-		$('#nosendform1').show();
-		$('#sendform1').hide();
-		}
-	if (longitudehtml!=""){
-		$('#sendform1').show();
-		$('#nosendform1').hide();
-		}
+	);				
 	$('.chatbutton').click(function(){
 		var innerhtml = $('.chatbutton').html();
 		if (innerhtml==="Show Chatbot"){
@@ -809,7 +815,7 @@ input.form-checkbox:checked + label:after,
 							src="https://console.dialogflow.com/api-client/demo/embedded/e1e35488-9246-4bc6-a5f2-88af8428a45e">
 						</iframe>
 						<br>
-						<a class="btn btn-primary" href="/formupdate"><p>Update Form</p></a>
+						<a class="btn btn-primary" href="/formupdate" id="updateform"><p>Update Form</p></a>
 						<br>
 						<br>
 						</div>
