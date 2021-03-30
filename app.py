@@ -13,6 +13,11 @@ from urllib.request import urlopen
 
 
 from datetime import datetime
+import psycopg2
+
+connection = psycopg2.connect(database="mlops", user="postgres", password="S4Eh3j35yktYImAjjSaZ", host="mlops-postgre.cqrst0aq2gxj.us-east-2.rds.amazonaws.com", port=5432)
+
+cursor = connection.cursor()
 
 
 app = Flask(__name__)
@@ -186,6 +191,11 @@ def dbupdated():
     
 
 
+
+
+
+    #sql = "''' insert into oic(atfault,fault) values ('{}','{}') '''".format(new_dict_1[4],new_dict_1[2])
+    #cursor.execute(sql)
 
     return render_template('dbupdate.html',bot_message="Your OIC form has been sent - thank you",oic_date=oic_date, oic_latitude="51.4568", oic_longitude="-77.7895",  oic_atfault = new_dict_1[4], oic_addressed = new_dict_1[3], oic_condition_1 = oic_condition_1, oic_condition_2 = oic_condition_2, oic_condition_3 = oic_condition_3, oic_addressed_1 = oic_addressed_1, oic_addressed_2 = oic_addressed_2, oic_addressed_3 = oic_addressed_3,  oic_description = new_dict, oic_location = new_dict_1[0], oic_time = oic_time) 
 
