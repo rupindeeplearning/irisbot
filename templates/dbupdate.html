@@ -11,6 +11,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	$('#sendhome').click(function(){
+		document.getElementById("210272594249357").reset();		
+		}
+	);
+});
+</script>
+
 <script type="text/javascript">
 	JotForm.init(function(){
 
@@ -1025,7 +1035,7 @@ input.form-checkbox:checked + label:after,
             <li class="form-line" data-type="control_button" id="id_18">
                 <div class="form-input-wide" data-layout="full" id="cid_18">
                     <div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-                        <a href="/" class='btn btn-primary'>Home</a>						
+                        <a href="/" class='btn btn-primary' id='sendhome'>Home</a>						
                     </div>
                 </div>
             </li>
