@@ -15,9 +15,25 @@
 <script>
 $(document).ready(function() {
     $('.chatbot').hide();
+	var longitudehtml = $('#input_29').html();
+	if (longitudehtml===""){
+		$('#nosendform').show();
+		$('#sendform').hide();
+		}
+	if (longitudehtml!=""){
+		$('#sendform').show();
+		$('#nosendform').hide();
+		}
+	if (longitudehtml===""){
+		$('#nosendform1').show();
+		$('#sendform1').hide();
+		}
+	if (longitudehtml!=""){
+		$('#sendform1').show();
+		$('#nosendform1').hide();
+		}
 	$('.chatbutton').click(function(){
 		var innerhtml = $('.chatbutton').html();
-		var longitudehtml = $('#input_29').html();
 		if (innerhtml==="Show Chatbot"){
 			$('.chatbutton').html("Hide Chatbot");
 			$('.chatbot').show();
@@ -25,14 +41,6 @@ $(document).ready(function() {
 		if (innerhtml==="Hide Chatbot"){
 			$('.chatbutton').html("Show Chatbot");
 			$('.chatbot').hide();
-			}
-		if (longitudehtml===""){
-			$('#nosendform').show();
-			$('#sendform').hide();
-			}
-		if (longitudehtml!=""){
-			$('#sendform').show();
-			$('#nosendform').hide();
 			}
 		
 		}
@@ -1081,14 +1089,14 @@ input.form-checkbox:checked + label:after,
 					<li class="form-line" data-type="control_button" id="id_54">
 						<div class="form-input-wide" data-layout="full" id="cid_54">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<p class='btn btn-primary' id='nosendform'  color='red'>Submit</p>						
+								<p class='btn btn-primary' id='nosendform1'  color='red'>Submit</p>						
 							</div>
 						</div>
 					</li>
 					<li class="form-line" data-type="control_button" id="id_55">
 						<div class="form-input-wide" data-layout="full" id="cid_55">
 							<div class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField" data-align="auto">
-								<a href="/dbupdated" class='btn btn-primary' id='sendform'>Submit</a>						
+								<a href="/dbupdated" class='btn btn-primary' id='sendform1'>Submit</a>						
 							</div>
 						</div>
 					</li>		
