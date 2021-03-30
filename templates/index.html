@@ -11,7 +11,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="/static/js/chatbot.js"></script>
+<script src="../static/js/chatbot.js"></script>
 <script type="text/javascript">
 	JotForm.init(function(){
 
@@ -723,35 +723,8 @@ input.form-checkbox:checked + label:after,
     /* Injected CSS Code */
 
 </style>
-    <div class="container" style="display: flex; height: 150px;">
-        <div style="width: 25%;">
-			<div class="chatbot">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<iframe
-				allow="microphone;"
-				width="250"
-				height="450"
-				src="https://console.dialogflow.com/api-client/demo/embedded/e1e35488-9246-4bc6-a5f2-88af8428a45e">
-			</iframe>
-			<br>
-			<a class="btn btn-primary" href="/formupdate"><p>Update Form</p></a>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<a href="/dbupdated" class='btn btn-primary'>Submit form</a>	
-			<br>
-			</div>
-        </div>
-        <div style="flex-grow: 1;">
-            <form accept-charset="utf-8" action="https://submit.jotformeu.com/submit/210272594249357/" autocomplete="on"
+
+            <form accept-charset="utf-8" <!--action="https://submit.jotformeu.com/submit/210272594249357/" autocomplete="on" -->
 			  class="jotform-form" enctype="multipart/form-data" id="210272594249357" method="post"
 			  name="form_210272594249357">
 			<input name="formID" type="hidden" value="210272594249357"/>
@@ -767,6 +740,8 @@ input.form-checkbox:checked + label:after,
 			  .formLogoWrapper { display:inline-block; position: absolute; width: 100%;} .form-all:before { background: none !important;} .formLogoWrapper.Left { top: -87px; left: 0; text-align: left;}
 
 				</style>
+									
+					
 				<ul class="form-section page-section">
 					<li class="form-input-wide" data-type="control_head" id="cid_19">
 						<div class="form-header-group  header-large">
@@ -782,7 +757,26 @@ input.form-checkbox:checked + label:after,
 						<h3 class="form-header" data-component="header" id="header_19">
 							<p> {{ bot_message }} </p>
 						</h3>
-					</div>
+					</div>	
+					<div  class='btn btn-primary'><p  class="chatbutton">Show Chatbot</p></div>
+					<div>
+						<div class="chatbot">
+						<br>
+						<br>
+						<iframe
+							allow="microphone;"
+							width="350"
+							height="430"
+							src="https://console.dialogflow.com/api-client/demo/embedded/e1e35488-9246-4bc6-a5f2-88af8428a45e">
+						</iframe>
+						<br>
+						<a class="btn btn-primary" href="/formupdate"><p>Update Form</p></a>
+						<br>
+						<br>
+						<a href="/dbupdated" class='btn btn-primary'>Submit form</a>	
+						<br>
+						</div>
+					</div>					
 					<li class="form-line" data-type="control_datetime" id="id_20">
 						<label class="form-label form-label-top form-label-auto" for="lite_mode_20" id="label_20"> Date </label>
 						<div class="form-input-wide" data-layout="half" id="cid_20">
@@ -1056,7 +1050,13 @@ input.form-checkbox:checked + label:after,
 			</div>
 			</script>
 		</form>
-
+<!-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Incident-Bot"
+  agent-id="e1e35488-9246-4bc6-a5f2-88af8428a45e"
+  language-code="en"
+></df-messenger> -->
 
 		<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
 			<div class="modal-dialog">
@@ -1076,8 +1076,6 @@ input.form-checkbox:checked + label:after,
 			</div>
 		</div>
 
-        </div>
-    </div>
 
 
 
