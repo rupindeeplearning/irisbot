@@ -17,13 +17,6 @@ $(document).ready(function() {
     $('.chatbot').hide();
 	var longitudehtml = $('#input_29').html();
 	
-	if($('#message').html()==="If the form is correct, submit the form."){
-	
-			$('#sendform').show();
-			$('#nosendform').hide();
-			$('#sendform1').show();
-			$('#nosendform1').hide();	
-	};	
 	$('#input_29').change(function(){
 	
 		$('#nosendform').hide();
@@ -33,6 +26,25 @@ $(document).ready(function() {
 		});			
 		
 		
+		
+	$('#updateform').click(function(){
+			alert("here");
+			$('#sendform').show();
+			$('#nosendform').hide();	
+			$('#sendform1').show();
+			$('#nosendform1').hide();		
+		
+		}
+	);		
+		
+	if($('#message').html()==="If the form is correct, submit the form."){
+	
+			$('#sendform').show();
+			$('#nosendform').hide();
+			$('#sendform1').show();
+			$('#nosendform1').hide();	
+	}
+	else{
 		if (longitudehtml===""){
 			$('#nosendform').show();
 			$('#sendform').hide();
@@ -48,16 +60,9 @@ $(document).ready(function() {
 		if (longitudehtml!=""){
 			$('#sendform1').show();
 			$('#nosendform1').hide();
-			}		
-	$('#updateform').click(function(){
-			alert("here");
-			$('#sendform').show();
-			$('#nosendform').hide();	
-			$('#sendform1').show();
-			$('#nosendform1').hide();		
-		
-		}
-	);				
+			}
+	}	
+	;
 	$('.chatbutton').click(function(){
 		var innerhtml = $('.chatbutton').html();
 		if (innerhtml==="Show Chatbot"){
