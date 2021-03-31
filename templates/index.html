@@ -20,6 +20,24 @@ $(document).ready(function() {
 		$('#sendform1').show();
 		$('#nosendform1').hide();
 		});			
+		
+		
+		if (longitudehtml===""){
+			$('#nosendform').show();
+			$('#sendform').hide();
+			}
+		if (longitudehtml!=""){
+			$('#sendform').show();
+			$('#nosendform').hide();
+			}
+		if (longitudehtml===""){
+			$('#nosendform1').show();
+			$('#sendform1').hide();
+			}
+		if (longitudehtml!=""){
+			$('#sendform1').show();
+			$('#nosendform1').hide();
+			}		
 	$('#updateform').click(function(){
 		var longitudehtml = $('#input_29').html();
 		
