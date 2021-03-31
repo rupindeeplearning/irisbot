@@ -17,6 +17,9 @@ $(document).ready(function() {
     $('.chatbot').hide();
 	var longitudehtml = $('#input_29').html();
 	$('#input_29').change(function(){
+	
+		$('#nosendform').show();
+		$('#sendform').hide();	
 		$('#sendform1').show();
 		$('#nosendform1').hide();
 		});			
@@ -39,24 +42,11 @@ $(document).ready(function() {
 			$('#nosendform1').hide();
 			}		
 	$('#updateform').click(function(){
-		var longitudehtml = $('#input_29').html();
-		
-		if (longitudehtml===""){
-			$('#nosendform').show();
-			$('#sendform').hide();
-			}
-		if (longitudehtml!=""){
+	
 			$('#sendform').show();
-			$('#nosendform').hide();
-			}
-		if (longitudehtml===""){
-			$('#nosendform1').show();
-			$('#sendform1').hide();
-			}
-		if (longitudehtml!=""){
+			$('#nosendform').hide();	
 			$('#sendform1').show();
-			$('#nosendform1').hide();
-			}		
+			$('#nosendform1').hide();		
 		
 		}
 	);				
