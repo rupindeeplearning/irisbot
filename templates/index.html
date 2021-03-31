@@ -15,7 +15,7 @@
 <script>
 $(document).ready(function() {
     $('.chatbot').hide();
-	var longitudehtml = $('#input_29').html();
+	
 	
 	$('#input_29').change(function(){
 	
@@ -45,6 +45,7 @@ $(document).ready(function() {
 			$('#nosendform1').hide();	
 	}
 	else{
+		var longitudehtml = $('#input_29').html();
 		alert(longitudehtml);
 		if (longitudehtml===""){
 			$('#nosendform').show();
