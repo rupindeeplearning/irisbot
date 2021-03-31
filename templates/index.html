@@ -16,6 +16,14 @@
 $(document).ready(function() {
     $('.chatbot').hide();
 	var longitudehtml = $('#input_29').html();
+	
+	if($('#message').html()==="If the form is correct, submit the form."){
+	
+			$('#sendform').show();
+			$('#nosendform').hide();
+			$('#sendform1').show();
+			$('#nosendform1').hide();	
+	};	
 	$('#input_29').change(function(){
 	
 		$('#nosendform').show();
@@ -42,7 +50,7 @@ $(document).ready(function() {
 			$('#nosendform1').hide();
 			}		
 	$('#updateform').click(function(){
-	
+			alert("here");
 			$('#sendform').show();
 			$('#nosendform').hide();	
 			$('#sendform1').show();
@@ -808,7 +816,7 @@ input.form-checkbox:checked + label:after,
 					</li>
 					<div class="header-text httac htvam">
 						<h3 class="form-header" data-component="header" id="header_19">
-							<p> {{ bot_message }} </p>
+							<p id="message"> {{ bot_message }} </p>
 						</h3>
 					</div>	
 					<div  class='btn btn-primary'><p  class="chatbutton">Show Chatbot</p></div>
