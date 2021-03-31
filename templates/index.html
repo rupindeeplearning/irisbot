@@ -28,7 +28,7 @@ $(document).ready(function() {
 		
 		
 	$('#updateform').click(function(){
-			alert("here");
+			
 			$('#sendform').show();
 			$('#nosendform').hide();	
 			$('#sendform1').show();
@@ -45,6 +45,7 @@ $(document).ready(function() {
 			$('#nosendform1').hide();	
 	}
 	else{
+		alert(longitudehtml);
 		if (longitudehtml===""){
 			$('#nosendform').show();
 			$('#sendform').hide();
